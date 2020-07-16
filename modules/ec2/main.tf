@@ -1,6 +1,6 @@
 resource "aws_instance" "sample_instance" {
     ami             = var.ami
-    instance_type   = "t2.micro"
+    instance_type   = var.instance_type
     security_groups = [aws_security_group.ssh.name]
     key_name        = aws_key_pair.mvashkevich.key_name
 
@@ -9,15 +9,15 @@ resource "aws_instance" "sample_instance" {
     }
 
     connection {
-    type        = "ssh"
-    user        = "ec2-user"
+    type        = var.conn_type
+    user        = var.conn_user
     host        = self.public_ip
-    private_key = file("~/.ssh/id_rsa")
+    private_key = file(var.ssh_private_key)
 
     }
 
     provisioner "file" {
-    source      = "assets/sample_file.txt"
+    source      = var.sample_file
     destination = "~/sample_file.txt"
     }
 
