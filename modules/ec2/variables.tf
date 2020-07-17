@@ -1,29 +1,20 @@
 # instance vars
+variable "counter" {
+}
+
 variable "ami" {}
 
-variable "instance_type" {
-  default = "t2.micro"
-}
+variable "instance_type" {}
 
 # provisioner connection vars
-variable "conn_type" {
-  default = "ssh"
-}
+variable "conn_type" {}
 
-variable "conn_user" {
-  default = "ec2-user"
-}
+variable "conn_user" {}
 
 # assets
-variable "sample_file" {
-  default = "assets/sample_file.txt"
-}
+variable "sample_file" {}
 
 # SSH keys
-variable "ssh_public_key" {
-  default = "~/.ssh/id_rsa.pub"
-}
+variable "ssh_public_key" {}
 
-variable "ssh_private_key" {
-  default = "~/.ssh/id_rsa"
-}
+variable "ssh_private_key" {}
