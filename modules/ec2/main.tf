@@ -1,4 +1,6 @@
 resource "aws_instance" "sample_instance" {
+    count           = var.counter
+
     ami             = var.ami
     instance_type   = var.instance_type
     security_groups = [aws_security_group.ssh.name]
