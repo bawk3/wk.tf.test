@@ -1,10 +1,11 @@
 # instance vars
-variable "counter" {
-}
-
+variable "counter" {}
 variable "ami" {}
-
 variable "instance_type" {}
+variable "ec2-security_group_ids" {
+    type = list(string)
+    default = []
+}
 
 # provisioner connection vars
 variable "conn_type" {}

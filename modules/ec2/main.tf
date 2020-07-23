@@ -1,9 +1,9 @@
-resource "aws_instance" "sample_instance" {
+resource "aws_instance" "instance" {
     count           = var.counter
 
     ami             = var.ami
     instance_type   = var.instance_type
-    security_groups = [aws_security_group.ssh.name]
+    vpc_security_group_ids = var.ec2-security_group_ids
     key_name        = aws_key_pair.mvashkevich.key_name
 
     tags = {

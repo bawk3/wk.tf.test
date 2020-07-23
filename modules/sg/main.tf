@@ -1,5 +1,5 @@
 # EC2 security groups
-resource "aws_security_group" "ssh" {
+resource "aws_security_group" "sg" {
   name        = "SSH"
   description = "Open inbound 22 port"
 
